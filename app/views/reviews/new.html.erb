@@ -1,0 +1,11 @@
+<h1>Add A New Review</h1>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <% if @review.errors.any? %>
+    <% @review.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <%= f.input :content %>
+  <%= f.input :stars %>
+  <%= f.submit "Submit", class: 'btn btn-primary' %>
+<% end %>
